@@ -10,5 +10,12 @@ export default defineConfig({
     adapter: cloudflare({
         imageService: 'compile',
     }),
-    integrations: [react(), tailwind()]
+    integrations: [react(), tailwind()],
+    vite: {
+        resolve: {
+            alias: {
+                "react-dom/server": "react-dom/server.edge",
+            },
+        },
+    },
 });
