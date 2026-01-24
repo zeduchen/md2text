@@ -6,6 +6,7 @@ import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://www.md2text.com',
     output: 'server',
     adapter: cloudflare({
         imageService: 'compile',

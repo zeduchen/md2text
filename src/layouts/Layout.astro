@@ -5,11 +5,60 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-        <meta name="description" content="Convert Markdown tables to ASCII/Text tables instantly." />
+		<meta
+			name="description"
+			content="Convert Markdown tables to ASCII/Text tables instantly."
+		/>
 		<title>Markdown Table to Text</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+		<!-- SEO -->
+		<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+		<meta
+			name="keywords"
+			content="markdown to text, table converter, ascii table, markdown tools, developer tools"
+		/>
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content="Markdown Table to Text" />
+		<meta
+			property="og:description"
+			content="Instantly convert Markdown tables into formatted ASCII text."
+		/>
+		<meta property="og:image" content="/favicon.svg" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content="Markdown Table to Text" />
+		<meta
+			property="twitter:description"
+			content="Instantly convert Markdown tables into formatted ASCII text."
+		/>
+		<meta property="twitter:image" content="/favicon.svg" />
+
+		<!-- Structured Data -->
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "WebApplication",
+				name: "Markdown Table to Text",
+				url: Astro.site,
+				description:
+					"Instantly convert Markdown tables into formatted ASCII text.",
+				applicationCategory: "DeveloperApplication",
+				operatingSystem: "Any",
+			})}
+		/>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body class="bg-gray-900 text-white min-h-screen font-sans">
 		<slot />
@@ -17,15 +66,19 @@
 </html>
 
 <style is:global>
-    :root {
-        --accent: 136, 58, 234;
+	:root {
+		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
 		--accent-dark: 49, 10, 101;
-    }
-	html {
-		font-family: 'Inter', system-ui, sans-serif;
 	}
-    code, pre, textarea {
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace; /* Robust stack for Mac/CJK */
-    }
+	html {
+		font-family: "Inter", system-ui, sans-serif;
+	}
+	code,
+	pre,
+	textarea {
+		font-family:
+			ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+			"Courier New", monospace; /* Robust stack for Mac/CJK */
+	}
 </style>
