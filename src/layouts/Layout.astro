@@ -7,9 +7,34 @@
 		<meta name="generator" content={Astro.generator} />
 		<meta
 			name="description"
-			content="Convert Markdown tables to ASCII/Text tables instantly."
+			content="Convert Markdown tables to ASCII text instantly. Free tool to format tables for READMEs and docs. Copy ready-to-use text tables with perfect alignment."
 		/>
-		<title>Markdown Table to Text</title>
+		<title>
+			Markdown Table to Text Converter - Instant ASCII Formatter
+		</title>
+
+		<!-- Robots -->
+		<meta name="robots" content="index, follow" />
+
+		<!-- Google Analytics -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+		></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+			gtag("config", "G-XXXXXXXXXX");
+		</script>
+
+		<!-- Google AdSense -->
+		<script
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+			crossorigin="anonymous"></script>
 
 		<!-- SEO -->
 		<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
@@ -21,20 +46,26 @@
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={Astro.url} />
-		<meta property="og:title" content="Markdown Table to Text" />
+		<meta
+			property="og:title"
+			content="Markdown Table to Text Converter - Instant ASCII Formatter"
+		/>
 		<meta
 			property="og:description"
-			content="Instantly convert Markdown tables into formatted ASCII text."
+			content="Convert Markdown tables to ASCII text instantly. Free tool to format tables for READMEs and docs. Copy ready-to-use text tables with perfect alignment."
 		/>
 		<meta property="og:image" content="/favicon.svg" />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary" />
 		<meta property="twitter:url" content={Astro.url} />
-		<meta property="twitter:title" content="Markdown Table to Text" />
+		<meta
+			property="twitter:title"
+			content="Markdown Table to Text Converter - Instant ASCII Formatter"
+		/>
 		<meta
 			property="twitter:description"
-			content="Instantly convert Markdown tables into formatted ASCII text."
+			content="Convert Markdown tables to ASCII text instantly. Free tool to format tables for READMEs and docs. Copy ready-to-use text tables with perfect alignment."
 		/>
 		<meta property="twitter:image" content="/favicon.svg" />
 
@@ -44,10 +75,10 @@
 			set:html={JSON.stringify({
 				"@context": "https://schema.org",
 				"@type": "WebApplication",
-				name: "Markdown Table to Text",
+				name: "Markdown Table to Text Converter - Instant ASCII Formatter",
 				url: Astro.site,
 				description:
-					"Instantly convert Markdown tables into formatted ASCII text.",
+					"Convert Markdown tables to ASCII text instantly. Free tool to format tables for READMEs and docs. Copy ready-to-use text tables with perfect alignment.",
 				applicationCategory: "DeveloperApplication",
 				operatingSystem: "Any",
 			})}
