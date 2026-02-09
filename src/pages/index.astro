@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import TableConverter from "../components/TableConverter.jsx";
 ---
 
-<Layout>
+<Layout title="Markdown Table to Text Converter - Instant ASCII Formatter">
     <main class="min-h-screen flex flex-col items-center py-10">
         <div class="text-center mb-10 space-y-4">
             <h1
@@ -64,8 +64,220 @@ import TableConverter from "../components/TableConverter.jsx";
             </div>
         </section>
 
-        <footer class="mt-auto py-10 text-gray-500 text-sm">
-            Built with Astro & React
+        <section class="max-w-4xl mx-auto mt-20 px-6 text-gray-300">
+            <h2 class="text-3xl font-bold text-white mb-10 text-center">
+                How to Use
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div
+                            class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold"
+                        >
+                            1
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">
+                                Paste Content
+                            </h3>
+                            <p class="text-gray-400">
+                                Copy your Markdown content (tables, text, links)
+                                and paste it into the left input box.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div
+                            class="flex-shrink-0 w-8 h-8 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold"
+                        >
+                            2
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">
+                                Select Style
+                            </h3>
+                            <p class="text-gray-400">
+                                Choose your preferred table style (Grid,
+                                Unicode, or Simple) using the dropdown menu.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div
+                            class="flex-shrink-0 w-8 h-8 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center font-bold"
+                        >
+                            3
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-white mb-2">
+                                Copy Result
+                            </h3>
+                            <p class="text-gray-400">
+                                Your formatted text is instantly generated.
+                                Click "Copy Result" to use it anywhere.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-gray-800/30 p-8 rounded-2xl border border-gray-700/50"
+                >
+                    <div class="space-y-4 font-mono text-sm">
+                        <div class="text-gray-500">Input:</div>
+                        <div class="text-blue-300">
+                            | id | name |<br />|--|--|<br />| 1 | test |
+                        </div>
+                        <div class="h-px bg-gray-700 my-4"></div>
+                        <div class="text-gray-500">Output:</div>
+                        <pre
+                            class="text-green-300 font-mono text-xs leading-relaxed whitespace-pre font-bold">+----+------+<br />| id | name |<br />+----+------+<br />| 1  | test |<br />+----+------+</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto mt-20 px-6 text-gray-300">
+            <h2 class="text-3xl font-bold text-white mb-10 text-center">
+                Powerful Features
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div
+                    class="p-6 bg-gray-900/40 rounded-xl border border-gray-800 hover:border-blue-500/30 transition-colors"
+                >
+                    <h3 class="text-xl font-semibold text-white mb-3">
+                        Mixed Content Support
+                    </h3>
+                    <p class="text-gray-400">
+                        Not just for tables! Input any Markdown file containing
+                        text, links, and tables. We'll strip the formatting from
+                        the text while keeping your tables perfectly aligned.
+                    </p>
+                </div>
+                <div
+                    class="p-6 bg-gray-900/40 rounded-xl border border-gray-800 hover:border-purple-500/30 transition-colors"
+                >
+                    <h3 class="text-xl font-semibold text-white mb-3">
+                        Smart URL Preservation
+                    </h3>
+                    <p class="text-gray-400">
+                        Links and images aren't lost. We intelligently convert
+                        `[Link](url)` to `Link (url)` so you retain all the
+                        valuable information in a readable text format.
+                    </p>
+                </div>
+                <div
+                    class="p-6 bg-gray-900/40 rounded-xl border border-gray-800 hover:border-pink-500/30 transition-colors"
+                >
+                    <h3 class="text-xl font-semibold text-white mb-3">
+                        Privacy First
+                    </h3>
+                    <p class="text-gray-400">
+                        All conversion happens right in your browser. Your data
+                        never leaves your device and is never sent to any
+                        server. Complete privacy guaranteed.
+                    </p>
+                </div>
+                <div
+                    class="p-6 bg-gray-900/40 rounded-xl border border-gray-800 hover:border-green-500/30 transition-colors"
+                >
+                    <h3 class="text-xl font-semibold text-white mb-3">
+                        Multiple Styles
+                    </h3>
+                    <p class="text-gray-400">
+                        Need a specific look? Choose from standard ASCII Grid,
+                        smooth Unicode borders, or a Simple minimal style to fit
+                        your needs.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto mt-20 px-6 text-gray-300">
+            <h2 class="text-3xl font-bold text-white mb-10 text-center">
+                Frequently Asked Questions
+            </h2>
+            <div class="space-y-8">
+                <div
+                    class="bg-gray-800/20 p-6 rounded-xl border border-gray-700/50"
+                >
+                    <h3 class="text-xl font-semibold text-white mb-2">
+                        Is my data secure?
+                    </h3>
+                    <p class="text-gray-400">
+                        Absolutely. This tool runs entirely in your browser
+                        using JavaScript. No data is ever sent to our servers.
+                        Your content stays on your device.
+                    </p>
+                </div>
+                <div
+                    class="bg-gray-800/20 p-6 rounded-xl border border-gray-700/50"
+                >
+                    <h3 class="text-xl font-semibold text-white mb-2">
+                        Can I convert large files?
+                    </h3>
+                    <p class="text-gray-400">
+                        Yes, the tool is optimized for performance and can
+                        handle large markdown files efficiently. The only limit
+                        is your browser's memory.
+                    </p>
+                </div>
+                <div
+                    class="bg-gray-800/20 p-6 rounded-xl border border-gray-700/50"
+                >
+                    <h3 class="text-xl font-semibold text-white mb-2">
+                        What if my table has mixed alignment?
+                    </h3>
+                    <p class="text-gray-400">
+                        We support markdown column alignment syntax (e.g.,
+                        `|:---|:---:|---:|`). The text converter respects these
+                        settings when generating the ASCII output.
+                    </p>
+                </div>
+                <div
+                    class="bg-gray-800/20 p-6 rounded-xl border border-gray-700/50"
+                >
+                    <h3 class="text-xl font-semibold text-white mb-2">
+                        Is this tool free?
+                    </h3>
+                    <p class="text-gray-400">
+                        Yes, Markdown Table to Text is completely free to use
+                        for both personal and commercial projects.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-24 border-t border-gray-800 w-full bg-gray-900/50">
+            <div
+                class="max-w-6xl mx-auto py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-6"
+            >
+                <div class="text-center md:text-left">
+                    <h3 class="text-lg font-bold text-white mb-2">
+                        Markdown Table to Text
+                    </h3>
+                    <p class="text-gray-500 text-sm">
+                        Simplifying documentation for developers worldwide.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center md:items-end gap-2">
+                    <div class="flex gap-6 text-sm text-gray-400">
+                        <a
+                            href="/privacy"
+                            class="hover:text-white transition-colors"
+                            >Privacy Policy</a
+                        >
+                        <a
+                            href="/terms"
+                            class="hover:text-white transition-colors"
+                            >Terms of Service</a
+                        >
+                    </div>
+                    <div class="text-gray-500 text-sm">
+                        &copy; {new Date().getFullYear()} Markdown Table to Text.
+                        All rights reserved.
+                    </div>
+                </div>
+            </div>
         </footer>
     </main>
 </Layout>

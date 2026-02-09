@@ -1,3 +1,15 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const {
+	title,
+	description = "Convert Markdown tables to ASCII text instantly. Free tool to format tables for READMEs and docs. Copy ready-to-use text tables with perfect alignment.",
+} = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,14 +17,9 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<meta
-			name="description"
-			content="Convert Markdown tables to ASCII text instantly. Free tool to format tables for READMEs and docs. Copy ready-to-use text tables with perfect alignment."
-		/>
+		<meta name="description" content={description} />
 		<meta name="google-adsense-account" content="ca-pub-7644074829926237" />
-		<title>
-			Markdown Table to Text Converter - Instant ASCII Formatter
-		</title>
+		<title>{title}</title>
 
 		<!-- Robots -->
 		<meta name="robots" content="index, follow" />
@@ -48,27 +55,15 @@
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={Astro.url} />
-		<meta
-			property="og:title"
-			content="Markdown Table to Text Converter - Instant ASCII Formatter"
-		/>
-		<meta
-			property="og:description"
-			content="Convert Markdown tables to ASCII text instantly. Free tool to format tables for READMEs and docs. Copy ready-to-use text tables with perfect alignment."
-		/>
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
 		<meta property="og:image" content="/favicon.svg" />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary" />
 		<meta property="twitter:url" content={Astro.url} />
-		<meta
-			property="twitter:title"
-			content="Markdown Table to Text Converter - Instant ASCII Formatter"
-		/>
-		<meta
-			property="twitter:description"
-			content="Convert Markdown tables to ASCII text instantly. Free tool to format tables for READMEs and docs. Copy ready-to-use text tables with perfect alignment."
-		/>
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content="/favicon.svg" />
 
 		<!-- Structured Data -->
