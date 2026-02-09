@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { markdownToTextTable } from '../utils/tableConverter';
 
 export default function TableConverter() {
-    const [input, setInput] = useState('| Header 1 | Header 2 |\n|---|---|\n| Cell 1 | Cell 2 |');
+    const [input, setInput] = useState('# 🌑 Developer Humor\n\nWhy do **programmers** prefer *dark mode*?\nBecause light attracts bugs!\n\n| Feature | Light Mode | Dark Mode |\n|---|---|---|\n| Bugs | 🐛 Visible | 🙈 Hidden |\n| Eyes | 😫 Tiresome | 🤩 Relaxed |\n| Coolness | ❄️ Low | 🔥 High |\n\n[More Jokes](https://example.com/dev-jokes)');
     const [output, setOutput] = useState('');
     const [copied, setCopied] = useState(false);
     const [style, setStyle] = useState('grid'); // Default to grid as requested
@@ -23,7 +23,7 @@ export default function TableConverter() {
     };
 
     return (
-        <div className="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-8 h-[calc(100vh-100px)]">
+        <div className="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Input Section */}
             <div className="flex flex-col gap-4">
                 <div className="flex justify-between items-center">
@@ -44,7 +44,7 @@ export default function TableConverter() {
                     </div>
                 </div>
                 <textarea
-                    className="w-full flex-1 bg-gray-800 text-gray-100 p-4 rounded-xl border border-gray-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none font-mono text-sm resize-none shadow-lg transition-all"
+                    className="w-full h-[60vh] bg-gray-800 text-gray-100 p-4 rounded-xl border border-gray-700 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none font-mono text-sm resize-none shadow-lg transition-all overflow-auto"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="| header | header |\n|---|---|\n| cell | cell |"
@@ -69,8 +69,8 @@ export default function TableConverter() {
                     </button>
                 </div>
 
-                <div className="relative flex-1 group">
-                    <pre className="w-full h-full bg-[#1e1e1e] text-gray-100 p-4 rounded-xl border border-gray-700 overflow-auto font-mono text-sm leading-relaxed shadow-lg">
+                <div className="relative h-[60vh] group">
+                    <pre className="w-full h-full bg-[#1e1e1e] text-gray-100 p-4 rounded-xl border border-gray-700 overflow-auto font-mono text-sm leading-relaxed shadow-lg whitespace-pre-wrap break-words">
                         {output}
                     </pre>
                     {/* Glossy Overlay Effect */}

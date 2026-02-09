@@ -98,6 +98,30 @@ function renderTableBlock(tableRows, styleName) {
 }
 
 /**
+ * Strips common markdown syntax to produce plain text.
+ */
+function stripMarkdown(text) {
+  if (!text) return '';
+
+  return text
+    // Remove headers
+    .replace(/^#+\s+/gm, '')
+    // Remove bold/italic (**text**, __text__, *text*, _text_)
+    .replace(/(\*\*|__)(.*?)\1/g, '$2')
+    .replace(/(\*|_)(.*?)\1/g, '$2')
+    // Preserve images ![alt](url) -> alt (url)
+    .replace(/!\[([^\]]+)\]\(([^)]+)\)/g, '$1 ($2)')
+    // Preserve links [text](url) -> text (url)
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1 ($2)')
+    // Remove blockquotes
+    .replace(/^>\s+/gm, '')
+    // Remove inline code `text`
+    .replace(/`([^`]+)`/g, '$1')
+    // Remove horizontal rules
+    .replace(/^\s*[-*_]{3,}\s*$/gm, '');
+}
+
+/**
  * Converts a Markdown string (possibly containing text + tables) into formatted text.
  */
 export function markdownToTextTable(markdown, options = { style: 'grid' }) {
@@ -122,8 +146,9 @@ export function markdownToTextTable(markdown, options = { style: 'grid' }) {
       }
       resultBlocks.push(renderTableBlock(tableRows, options.style));
     } else {
-      // Just join text lines
-      resultBlocks.push(currentBlockLines.join('\n'));
+      // Just join text lines and strip markdown
+      const textContent = currentBlockLines.join('\n');
+      resultBlocks.push(stripMarkdown(textContent));
     }
     currentBlockLines = [];
   }
