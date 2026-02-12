@@ -2,11 +2,13 @@
 interface Props {
 	title: string;
 	description?: string;
+	disableAds?: boolean;
 }
 
 const {
 	title,
 	description = "Convert Markdown tables to ASCII text instantly. Free tool to format tables for READMEs and docs. Copy ready-to-use text tables with perfect alignment.",
+	disableAds = false,
 } = Astro.props;
 ---
 
@@ -40,10 +42,15 @@ const {
 		</script>
 
 		<!-- Google AdSense -->
-		<script
-			async
-			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7644074829926237"
-			crossorigin="anonymous"></script>
+		{
+			!disableAds && (
+				<script
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7644074829926237"
+					crossorigin="anonymous"
+				/>
+			)
+		}
 
 		<!-- SEO -->
 		<link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
